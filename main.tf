@@ -42,7 +42,7 @@ resource "random_shuffle" "random_subnet" {
 
 
 resource "aws_elb" "web" {
-  name = "hackaton-elb-""${terraform.workspace}"
+  name = "hackaton-elb"-"${terraform.workspace}"
 
   subnets         = data.aws_subnet_ids.all.ids
   security_groups = ["${aws_security_group.allow-ssh.id}"]
